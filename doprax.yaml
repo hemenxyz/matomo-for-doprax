@@ -1,0 +1,29 @@
+volumes:
+  - name:  matomovol
+    mount: /var/www/html/
+envs:
+  - MATOMO_DATABASE_HOST: mysql
+  - MATOMO_DATABASE_USERNAME: dbuser01
+  - MATOMO_DATABASE_PASSWORD: mysql
+    type: password
+  - MATOMO_DATABASE_DBNAME: matomodb
+  
+
+
+
+
+
+
+services:
+  - mysql:
+      tag: 5.6
+      volumes:
+        - name: mysql_vol
+          mount: /var/lib/mysql/
+      envs:
+        - MYSQL_ROOT_PASSWORD: random_1
+          type: password
+        - MYSQL_DATABASE: matomodb
+        - MYSQL_USER: dbuser01
+        - MYSQL_PASSWORD: random_2
+          type: password
