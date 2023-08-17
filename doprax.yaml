@@ -1,12 +1,13 @@
-volumes:
-  - name:  matomovol
-    mount: /var/www/html/
-envs:
-  - MATOMO_DATABASE_HOST: mysql
-  - MATOMO_DATABASE_USERNAME: dbuser01
-  - MATOMO_DATABASE_PASSWORD: random_2
-    type: password
-  - MATOMO_DATABASE_DBNAME: matomodb
+main:
+  volumes:
+    - name:  matomovol
+      mount: /var/www/html/
+  envs:
+    - MATOMO_DATABASE_HOST: mysql
+    - MATOMO_DATABASE_USERNAME: dbuser01
+    - MATOMO_DATABASE_PASSWORD: random_2
+      type: password
+    - MATOMO_DATABASE_DBNAME: matomodb
 
 services:
   - mysql:
